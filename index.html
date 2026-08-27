@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cheap Flights to USA from UK | Shopnfly</title>
+  <meta name="description" content="Find cheap flights to USA from the UK with Shopnfly. Compare USA flight options from major UK airports and plan your next American adventure with ease.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800;900&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    /* ===== RESET & ROOT ===== */
+    :root{
+      --ink:#0F2540;
+      --ink-soft:#1D2430;
+      --parchment:#EDE8DD;
+      --parchment-deep:#E2DCCC;
+      --panel:#FBFAF6;
+      --amber:#E8A33D;
+      --amber-deep:#C97F1F;
+      --coral:#C1443C;
+      --line:#CFC7B2;
+      --flap-dark:#132B4C;
+      --flap-mid:#1C3A63;
+    }
+    *{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{
+      background:var(--parchment);
+      color:var(--ink-soft);
+      font-family:'Inter',sans-serif;
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+    }
+    h1,h2,h3{
+      font-family:'Archivo',sans-serif;
+      color:var(--ink);
+      letter-spacing:-0.01em;
+    }
+    .eyebrow{
+      font-family:'IBM Plex Mono',monospace;
+      font-size:0.72rem;
+      letter-spacing:0.14em;
+      text-transform:uppercase;
+      color:var(--amber-deep);
+      font-weight:600;
+    }
+    a{color:inherit;}
+    .wrap{max-width:1120px;margin:0 auto;padding:0 24px;}
+    img{max-width:100%;display:block;border-radius:12px;}
+    button{font-family:inherit;cursor:pointer;}
+
+    /* ===== HEADER ===== */
+    header{
+      position:sticky;top:0;z-index:50;
+      background:rgba(237,232,221,0.92);
+      backdrop-filter:blur(8px);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1120px;margin:0 auto;}
+    .logo{font-family:'Archivo',sans-serif;font-weight:900;font-size:1.3rem;color:var(--ink);display:flex;align-items:center;gap:8px;}
+    .logo .dot{width:8px;height:8px;border-radius:50%;background:var(--coral);}
+    .nav-links{display:flex;gap:28px;font-size:0.92rem;font-weight:500;}
+    .nav-links a{text-decoration:none;opacity:0.75;}
+    .nav-links a:hover{opacity:1;}
+    .nav-cta{
+      background:var(--ink);color:var(--panel);
+      padding:10px 18px;border-radius:999px;
+      font-weight:600;font-size:0.88rem;text-decoration:none;
+      border:none;
+    }
+    .nav-cta:hover{background:var(--flap-mid);}
+    @media(max-width:760px){.nav-links{display:none;}}
+
+    /* ===== HERO with image ===== */
+    .hero{
+      position:relative;
+      background:var(--ink);
+      color:var(--panel);
+      overflow:hidden;
+      padding:88px 0 64px;
+    }
+    .hero-bg-img{
+      position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.35;pointer-events:none;
+    }
+    .hero-inner{position:relative;z-index:2;}
+    .hero h1{
+      font-size:clamp(2.4rem,5.5vw,4.1rem);
+      font-weight:900;
+      color:#fff;
+      max-width:820px;
+      line-height:1.03;
+    }
+    .hero p.lead{
+      margin-top:20px;max-width:560px;
+      font-size:1.08rem;color:#D9DEE8;
+    }
+    .hero .eyebrow{color:var(--amber);margin-bottom:14px;display:block;}
+
+    /* search widget */
+    .search-card{
+      margin-top:40px;
+      background:var(--panel);
+      border-radius:18px;
+      padding:22px;
+      box-shadow:0 24px 60px rgba(0,0,0,0.35);
+      display:grid;
+      grid-template-columns:repeat(4,1fr) auto;
+      gap:14px;
+    }
+    .field{display:flex;flex-direction:column;gap:6px;border-right:1px solid var(--line);padding-right:14px;}
+    .field:last-of-type{border-right:none;}
+    .field label{font-family:'IBM Plex Mono',monospace;font-size:0.66rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--amber-deep);}
+    .field select,.field input{
+      border:none;background:transparent;font-family:'Archivo',sans-serif;
+      font-weight:700;font-size:1rem;color:var(--ink);outline:none;
+    }
+    .search-btn{
+      background:var(--coral);color:#fff;border:none;border-radius:12px;
+      padding:0 26px;font-weight:700;font-size:0.95rem;
+      display:flex;align-items:center;justify-content:center;gap:8px;
+      transition:background 0.2s;
+    }
+    .search-btn:hover{background:#a6362f;}
+    @media(max-width:900px){.search-card{grid-template-columns:1fr 1fr;}.field{border-right:none;border-bottom:1px solid var(--line);padding-bottom:10px;}}
+
+    /* ===== SECTIONS ===== */
+    section{padding:72px 0;}
+    section.tight{padding:56px 0;}
+    .section-head{max-width:680px;margin-bottom:36px;}
+    .section-head h2{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;margin-top:8px;}
+    .section-head p{margin-top:12px;color:#4A5164;font-size:1.02rem;}
+    p{color:#3A4152;}
+    .panel-bg{background:var(--panel);}
+
+    .link-word{
+      color:var(--coral);text-decoration:underline;text-decoration-color:rgba(193,68,60,0.35);
+      text-underline-offset:3px;font-weight:600;
+    }
+    .link-word:hover{text-decoration-color:var(--coral);}
+    .internal-link {
+      color: var(--coral);
+      text-decoration: underline;
+      text-decoration-color: rgba(193,68,60,0.35);
+      text-underline-offset: 3px;
+      font-weight: 600;
+    }
+    .internal-link:hover {
+      text-decoration-color: var(--coral);
+    }
+
+    .airport-strip{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px;}
+    .airport-chip{
+      font-family:'IBM Plex Mono',monospace;font-size:0.82rem;font-weight:600;
+      background:var(--ink);color:var(--amber);padding:8px 14px;border-radius:8px;
+      letter-spacing:0.04em;
+    }
+
+    /* departure board */
+    .board{
+      background:var(--flap-dark);
+      border-radius:20px;
+      padding:8px;
+      box-shadow:0 20px 50px rgba(15,37,64,0.35);
+    }
+    .board-caption{
+      font-family:'IBM Plex Mono',monospace;color:var(--amber);
+      font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;
+      padding:14px 18px 6px;
+      display:flex;justify-content:space-between;
+    }
+    .board-row{
+      border-top:1px solid rgba(255,255,255,0.08);
+      display:grid;
+      grid-template-columns:90px 1fr auto;
+      gap:18px;
+      align-items:start;
+      padding:18px;
+      cursor:pointer;
+    }
+    .board-row:hover{background:rgba(255,255,255,0.03);}
+    .flap-code{
+      font-family:'IBM Plex Mono',monospace;
+      font-weight:700;font-size:1.5rem;color:var(--amber);
+      background:var(--flap-mid);
+      border-radius:6px;
+      text-align:center;
+      padding:8px 0;
+      letter-spacing:0.05em;
+      box-shadow:inset 0 -2px 0 rgba(0,0,0,0.35);
+    }
+    .board-row h3{color:#fff;font-size:1.05rem;font-weight:700;margin-bottom:6px;}
+    .board-row p{color:#B9C1D1;font-size:0.94rem;max-width:560px;display:none;}
+    .board-row.open p{display:block;}
+    .board-row .status{
+      font-family:'IBM Plex Mono',monospace;font-size:0.72rem;color:#7C8AA8;
+      align-self:center;white-space:nowrap;
+    }
+
+    /* airport cards */
+    .airport-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:8px;}
+    .airport-card{
+      background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px 18px;
+    }
+    .airport-card .code{font-family:'IBM Plex Mono',monospace;font-weight:700;color:var(--coral);font-size:1.3rem;}
+    .airport-card h3{font-size:1rem;margin-top:6px;}
+    .airport-card p{font-size:0.88rem;margin-top:8px;color:#5A6175;}
+    @media(max-width:800px){.airport-grid{grid-template-columns:1fr 1fr;}}
+
+    /* checklist */
+    .checklist{display:grid;grid-template-columns:1fr 1fr;gap:14px 32px;margin-top:8px;}
+    .checklist li{list-style:none;display:flex;gap:12px;color:#3A4152;font-size:0.98rem;}
+    .checklist li::before{
+      content:"";flex:none;width:9px;height:9px;margin-top:7px;
+      background:var(--amber-deep);border-radius:2px;transform:rotate(45deg);
+    }
+    @media(max-width:700px){.checklist{grid-template-columns:1fr;}}
+
+    /* season cards */
+    .season-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:8px;}
+    .season-card{border-radius:14px;padding:20px;background:var(--panel);border:1px solid var(--line);}
+    .season-card .eyebrow{margin-bottom:8px;}
+    .season-card h3{font-size:1.02rem;}
+    .season-card p{font-size:0.88rem;margin-top:8px;color:#5A6175;}
+    @media(max-width:800px){.season-grid{grid-template-columns:1fr 1fr;}}
+
+    /* gates */
+    .gates{display:flex;flex-direction:column;gap:0;margin-top:12px;border-top:1px solid var(--line);}
+    .gate{
+      display:grid;grid-template-columns:70px 1fr;gap:20px;padding:20px 0;border-bottom:1px solid var(--line);
+      align-items:start;
+    }
+    .gate .gnum{
+      font-family:'IBM Plex Mono',monospace;font-weight:700;color:var(--coral);
+      background:var(--parchment-deep);border-radius:8px;text-align:center;padding:10px 0;font-size:0.95rem;
+    }
+    .gate h3{font-size:1.02rem;margin-bottom:4px;}
+    .gate p{font-size:0.92rem;}
+
+    /* benefits */
+    .benefit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:8px;}
+    .benefit{background:var(--ink);color:#fff;border-radius:14px;padding:24px;}
+    .benefit .glyph{
+      width:36px;height:36px;border-radius:8px;background:var(--amber);
+      display:flex;align-items:center;justify-content:center;color:var(--ink);font-weight:800;margin-bottom:14px;
+    }
+    .benefit h3{color:#fff;font-size:1rem;}
+    .benefit p{color:#B9C1D1;font-size:0.9rem;margin-top:8px;}
+    @media(max-width:800px){.benefit-grid{grid-template-columns:1fr 1fr;}}
+
+    /* FAQ */
+    .faq-item{border-bottom:1px solid var(--line);}
+    .faq-q{
+      display:flex;justify-content:space-between;align-items:center;
+      padding:20px 4px;font-weight:700;font-size:1rem;color:var(--ink);cursor:pointer;
+    }
+    .faq-q .plus{font-family:'IBM Plex Mono',monospace;color:var(--coral);font-size:1.2rem;transition:transform 0.2s;}
+    .faq-item.open .plus{transform:rotate(45deg);}
+    .faq-a{max-height:0;overflow:hidden;transition:max-height 0.25s ease;}
+    .faq-item.open .faq-a{max-height:240px;}
+    .faq-a p{padding:0 4px 20px;font-size:0.95rem;}
+
+    /* final CTA */
+    .final-cta{
+      background:var(--coral);color:#fff;border-radius:24px;padding:56px 40px;text-align:center;
+      margin:0 auto;
+    }
+    .final-cta h2{color:#fff;font-size:clamp(1.6rem,3.4vw,2.4rem);}
+    .final-cta p{color:#FBE3E0;margin-top:12px;max-width:540px;margin-left:auto;margin-right:auto;}
+    .final-cta .search-btn{background:var(--ink);margin-top:26px;padding:14px 32px;border-radius:999px;display:inline-flex;}
+    .final-cta .search-btn:hover{background:var(--flap-mid);}
+
+    footer{padding:40px 0;text-align:center;font-size:0.82rem;color:#6B7280;}
+
+    @media (prefers-reduced-motion: reduce){
+      html{scroll-behavior:auto;}
+      *{animation:none !important;transition:none !important;}
+    }
+    .plane{animation:fly 14s linear infinite;}
+    @keyframes fly{
+      0%{ transform:translateX(0) translateY(0); }
+      50%{ transform:translateX(6px) translateY(-3px); }
+      100%{ transform:translateX(0) translateY(0); }
+    }
+    .dash{stroke-dasharray:6 8;animation:march 3.5s linear infinite;}
+    @keyframes march{to{stroke-dashoffset:-140;}}
+
+    /* image grid for extra visuals */
+    .img-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:16px;
+      margin-top:16px;
+    }
+    .img-grid img{
+      width:100%;
+      height:120px;
+      object-fit:cover;
+      border-radius:12px;
+      background:var(--line);
+    }
+    .img-grid-2{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+      margin-top:16px;
+    }
+    .img-grid-2 img{
+      width:100%;
+      height:140px;
+      object-fit:cover;
+      border-radius:12px;
+      background:var(--line);
+    }
+    @media(max-width:700px){
+      .img-grid{grid-template-columns:1fr 1fr;}
+      .img-grid-2{grid-template-columns:1fr;}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="logo"><span class="dot"></span>Shopnfly</div>
+    <nav class="nav-links">
+      <a href="#destinations">Destinations</a>
+      <a href="#airports">UK Airports</a>
+      <a href="#planning">Travel Tips</a>
+      <a href="#faq">FAQs</a>
+    </nav>
+    <a class="nav-cta" href="https://shopnfly.co.uk/flight-to-usa">Search USA Flights</a>
+  </div>
+</header>
+
+<!-- ===== HERO with image ===== -->
+<section class="hero" id="search">
+  <img class="hero-bg-img" src="https://picsum.photos/seed/usa/1200/500" alt="USA city skyline at sunset" loading="lazy">
+  <div class="wrap hero-inner">
+    <span class="eyebrow">UK &rarr; USA &middot; ONE-WAY &amp; RETURN</span>
+    <h1>Cheap Flights to USA</h1>
+    <p class="lead">Planning a trip across the Atlantic? Find <a href="https://shopnfly.co.uk/flight-to-usa" class="internal-link">cheap flights to USA from the UK</a> with Shopnfly and explore flight options for some of America's most popular destinations &mdash; from a New York city break to an Orlando family holiday.</p>
+
+    <div class="search-card">
+      <div class="field">
+        <label>From</label>
+        <select><option>London (All Airports)</option><option>Manchester</option><option>Birmingham</option><option>Edinburgh</option></select>
+      </div>
+      <div class="field">
+        <label>To</label>
+        <select><option>New York</option><option>Los Angeles</option><option>Miami</option><option>Orlando</option><option>Chicago</option><option>Las Vegas</option><option>San Francisco</option><option>Boston</option><option>Washington DC</option><option>Houston</option></select>
+      </div>
+      <div class="field">
+        <label>Depart</label>
+        <input type="text" placeholder="Add date" readonly>
+      </div>
+      <div class="field">
+        <label>Trip type</label>
+        <select><option>Return</option><option>One-way</option></select>
+      </div>
+      <a href="https://shopnfly.co.uk/flight-to-usa" class="search-btn" style="text-decoration:none;display:flex;">Search Flights</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== INTRO + IMAGES (4 images) ===== -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Departing the UK</span>
+      <h2>Cheap Flights to USA from UK</h2>
+      <p>The USA is one of the most popular long-haul destinations for travellers from the UK. With major cities, national parks, beaches, entertainment destinations and business centres spread across the country, there are plenty of places to explore.</p>
+    </div>
+    <p>When looking for <a href="https://shopnfly.co.uk/flight-to-usa" class="internal-link">cheap flights from UK to USA</a>, it can help to compare more than one departure airport. Travellers based in London may have several airport options, while passengers in the Midlands or northern England may find it more convenient to start their journey from Manchester or Birmingham. Edinburgh can also be a useful option for travellers based in Scotland.</p>
+    <div class="img-grid">
+      <img src="https://picsum.photos/seed/nyc/300/200" alt="New York skyline" loading="lazy">
+      <img src="https://picsum.photos/seed/la/300/200" alt="Los Angeles" loading="lazy">
+      <img src="https://picsum.photos/seed/miami/300/200" alt="Miami beach" loading="lazy">
+      <img src="https://picsum.photos/seed/orlando/300/200" alt="Orlando theme park" loading="lazy">
+    </div>
+    <p style="margin-top:14px;">Being flexible with your travel dates, checking different USA destinations and comparing one-way and return options can give you more choices when planning your journey. <a href="https://shopnfly.co.uk/flight-to-usa" class="internal-link">Compare cheap flights to USA</a> from your nearest departure point below.</p>
+    <div class="airport-strip">
+      <span class="airport-chip">LON</span>
+      <span class="airport-chip">MAN</span>
+      <span class="airport-chip">BHX</span>
+      <span class="airport-chip">EDI</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DEPARTURE BOARD + IMAGE (1 image) ===== -->
+<section class="panel-bg" id="destinations">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Departure Board</span>
+      <h2>Popular USA Destinations from the UK</h2>
+      <p>Tap a route to read more. Each destination suits a different kind of trip, from city breaks to family holidays.</p>
+    </div>
+    <div class="board" id="board">
+      <div class="board-caption"><span>Route</span><span>Status</span></div>
+      <div class="board-row" data-code="NYC">
+        <div class="flap-code">NYC</div>
+        <div><h3>Flights from UK to New York</h3><p>New York is a favourite destination for UK travellers looking for culture, shopping, entertainment and iconic city attractions. Visit Times Square, explore Central Park, enjoy the views from the city's observation decks or discover neighbourhoods across Manhattan and Brooklyn. If you are searching for <a href="https://shopnfly.co.uk/flight-to-usa" class="internal-link">flights from UK to New York</a>, compare your travel dates and departure options to find an itinerary that works for your plans.</p></div>
+        <div class="status">City break</div>
+      </div>
+      <div class="board-row" data-code="LAX">
+        <div class="flap-code">LAX</div>
+        <div><h3>Flights from UK to Los Angeles</h3><p>Los Angeles combines beaches, entertainment, shopping and California's famous outdoor lifestyle. From Santa Monica and Venice Beach to Hollywood and Beverly Hills, the city offers plenty to see. Travellers searching for <a href="https://shopnfly.co.uk/flight-to-usa" class="internal-link">flights from UK to Los Angeles</a> should consider their preferred travel dates, departure airport and overall itinerary before booking.</p></div>
+        <div class="status">Holiday</div>
+      </div>
+      <div class="board-row" data-code="MIA">
+        <div class="flap-code">MIA</div>
+        <div><h3>Flights from UK to Miami</h3><p>Miami is popular with travellers looking for warm weather, beaches, nightlife, shopping and a vibrant city atmosphere. It can also be a convenient starting point for exploring other parts of Florida. When searching for <a href="https://shopnfly.co.uk/flight-to-usa" class="internal-link">flights from UK to Miami</a>, compare different dates and flight options before choosing the journey that best fits your trip.</p></div>
+        <div class="status">Beach &amp; city</div>
+      </div>
+      <div class="board-row" data-code="MCO">
+        <div class="flap-code">MCO</div>
+        <div><h3>Flights from UK to Orlando</h3><p>Orlando is a popular choice for family holidays, theme-park trips and longer stays in Florida. Visitors can combine Orlando with other destinations across the state depending on their travel plans. If you are looking for <a href="https://shopnfly.co.uk/flight-to-usa" class="internal-link">flights from UK to Orlando</a>, consider your preferred dates, luggage requirements and the total journey before completing your booking.</p></div>
+        <div class="status">Family</div>
+      </div>
+    </div>
+    <div style="margin-top:20px;">
+      <img src="https://picsum.photos/seed/travel/800/200" alt="USA travel collage" loading="lazy" style="width:100%;height:120px;object-fit:cover;border-radius:16px;">
+    </div>
+  </div>
+</section>
+
+<!-- ===== AIRPORTS + IMAGES (2 images) ===== -->
+<section id="airports">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Where to depart from</span>
+      <h2>Flights from Major UK Airports to the USA</h2>
+      <p>Your departure airport can have a significant impact on your travel options. If you live near more than one airport, compare the available choices before booking.</p>
+    </div>
+    <div class="airport-grid">
+      <div class="airport-card"><div class="code">LON</div><h3>London to USA</h3><p>A major starting point for international travel from the UK, with a wide range of <a href="https://shopnfly.co.uk/flight-to-usa" class="internal-link">USA destinations and travel dates</a> to compare.</p></div>
+      <div class="airport-card"><div class="code">MAN</div><h3>Manchester to USA</h3><p>An important departure point for travellers in northern England and surrounding areas, convenient if you live outside London. <a href="https://shopnfly.co.uk/flight-to-usa" class="internal-link">Compare flights from Manchester</a>.</p></div>
+      <div class="airport-card"><div class="code">BHX</div><h3>Birmingham to USA</h3><p>Travellers in the Midlands may prefer Birmingham. <a href="https://shopnfly.co.uk/flight-to-usa" class="internal-link">Compare options from Birmingham</a> before deciding which nearby airport suits you best.</p></div>
+      <div class="airport-card"><div class="code">EDI</div><h3>Edinburgh to USA</h3><p>A convenient starting point for travellers based in Scotland. <a href="https://shopnfly.co.uk/flight-to-usa" class="internal-link">Compare flights from Edinburgh</a> according to your destination and dates.</p></div>
+    </div>
+    <div class="img-grid-2">
+      <img src="https://picsum.photos/seed/airport1/600/200" alt="Airport terminal" loading="lazy">
+      <img src="https://picsum.photos/seed/airport2/600/200" alt="Plane takeoff" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- ===== CHECKLIST + IMAGE (1 image) ===== -->
+<section class="panel-bg">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Search smarter</span>
+      <h2>How to Find Cheap Flights to USA</h2>
+      <p>Finding the right flight is not only about searching for the lowest displayed price. Your travel dates, departure airport, destination and baggage requirements can all affect which option works best.</p>
+    </div>
+    <ul class="checklist">
+      <li>Compare different travel dates where your plans allow flexibility</li>
+      <li>Check more than one UK departure airport</li>
+      <li>Compare different USA arrival cities if your itinerary is flexible</li>
+      <li>Consider whether a one-way or return journey suits your plans</li>
+      <li>Review baggage allowances before booking</li>
+      <li>Check the complete itinerary rather than just the departure time</li>
+      <li>Allow enough time for connections when required</li>
+      <li>Review the booking conditions before confirming your journey</li>
+    </ul>
+    <div style="margin-top:20px;">
+      <img src="https://picsum.photos/seed/planning/800/160" alt="Travel planning" loading="lazy" style="width:100%;height:120px;object-fit:cover;border-radius:16px;">
+    </div>
+    <p style="margin-top:22px;">The more flexible your search, the more options you may have to consider. <a href="https://shopnfly.co.uk/flight-to-usa" class="internal-link">Search cheap flights to USA</a> and compare what's available for your dates.</p>
+  </div>
+</section>
+
+<!-- ===== SEASONS + IMAGES (4 images) ===== -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Seasons</span>
+      <h2>Best Time to Visit the USA</h2>
+      <p>The best time to visit the USA depends on where you are travelling and what you want to do. Demand and availability can change throughout the year, so consider the specific destination rather than treating the whole country as having one travel season.</p>
+    </div>
+    <div class="season-grid">
+      <div class="season-card"><span class="eyebrow">Spring</span><h3>Mild &amp; changeable</h3><p>A comfortable period for exploring many cities, with changing weather and seasonal activities.</p></div>
+      <div class="season-card"><span class="eyebrow">Summer</span><h3>Peak season</h3><p>Popular for holidays, family trips and outdoor activities. Busy destinations, so plan ahead.</p></div>
+      <div class="season-card"><span class="eyebrow">Autumn</span><h3>Colour &amp; calm</h3><p>Changing colours across many parts of the country &mdash; appealing for city breaks and sightseeing.</p></div>
+      <div class="season-card"><span class="eyebrow">Winter</span><h3>Seasonal events</h3><p>Ideal for travellers interested in winter activities or destinations with milder climates.</p></div>
+    </div>
+    <div class="img-grid" style="margin-top:16px;">
+      <img src="https://picsum.photos/seed/spring/300/120" alt="Spring" loading="lazy">
+      <img src="https://picsum.photos/seed/summer/300/120" alt="Summer" loading="lazy">
+      <img src="https://picsum.photos/seed/autumn/300/120" alt="Autumn" loading="lazy">
+      <img src="https://picsum.photos/seed/winter/300/120" alt="Winter" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- ===== ONE-WAY / RETURN + IMAGE (1 image) ===== -->
+<section class="panel-bg">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Trip structure</span>
+      <h2>One-Way and Return Flights to USA</h2>
+    </div>
+    <p>Your choice between a one-way and return journey depends on your travel plans. Return flights can be convenient for holidays, family visits and business trips where you already know when you plan to come back to the UK. One-way flights may suit travellers with flexible itineraries, longer stays or onward travel plans.</p>
+    <p style="margin-top:14px;">When searching for <a href="https://shopnfly.co.uk/flight-to-usa" class="internal-link">flights to USA from UK</a>, compare both options if your schedule allows flexibility.</p>
+    <div style="margin-top:18px;">
+      <img src="https://picsum.photos/seed/route/800/140" alt="Flight route map" loading="lazy" style="width:100%;height:120px;object-fit:cover;border-radius:16px;">
+    </div>
+  </div>
+</section>
+
+<!-- ===== GATE STEPS + IMAGE (1 image) ===== -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Boarding process</span>
+      <h2>How to Book Flights to the USA from the UK</h2>
+    </div>
+    <div class="gates">
+      <div class="gate"><div class="gnum">01</div><div><h3>Choose your departure airport</h3><p>Select from London, Manchester, Birmingham, Edinburgh or another UK airport. <a href="https://shopnfly.co.uk/flight-to-usa" class="internal-link">Compare flights from all UK airports</a>.</p></div></div>
+      <div class="gate"><div class="gnum">02</div><div><h3>Select your USA destination</h3><p>Pick from New York, Los Angeles, Miami and more. <a href="https://shopnfly.co.uk/flight-to-usa" class="internal-link">View all USA destinations</a>.</p></div></div>
+      <div class="gate"><div class="gnum">03</div><div><h3>Add dates &amp; passengers</h3><p>Enter your travel dates and how many people are travelling.</p></div></div>
+      <div class="gate"><div class="gnum">04</div><div><h3>Compare available options</h3><p>Review journeys side by side to find one that fits your plans.</p></div></div>
+      <div class="gate"><div class="gnum">05</div><div><h3>Review &amp; complete booking</h3><p>Check baggage information and booking conditions, then confirm. <a href="https://shopnfly.co.uk/flight-to-usa" class="internal-link">Book your USA flight now</a>.</p></div></div>
+    </div>
+    <div style="margin-top:20px;">
+      <img src="https://picsum.photos/seed/booking/800/120" alt="Booking process" loading="lazy" style="width:100%;height:110px;object-fit:cover;border-radius:16px;">
+    </div>
+  </div>
+</section>
+
+<!-- ===== BENEFITS + IMAGE (1 image) ===== -->
+<section class="panel-bg">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Why Shopnfly</span>
+      <h2>Why Search USA Flights with Shopnfly?</h2>
+      <p>Shopnfly helps UK travellers <a href="https://shopnfly.co.uk/flight-to-usa" class="internal-link">search for flight options for journeys to the USA</a>, designed to make searching and booking straightforward for holidays, family visits and business trips alike.</p>
+    </div>
+    <div class="benefit-grid">
+      <div class="benefit"><div class="glyph">S</div><h3>Simple flight search</h3><p>Compare routes and dates in one place, built around UK departure points.</p></div>
+      <div class="benefit"><div class="glyph">F</div><h3>Flexible travel options</h3><p>One-way or return, multiple destinations and travel dates to choose from.</p></div>
+      <div class="benefit"><div class="glyph">C</div><h3>Customer support</h3><p>Help is available if you have questions while searching or booking.</p></div>
+      <div class="benefit"><div class="glyph">B</div><h3>Easy booking journey</h3><p>A straightforward path from search to confirmation.</p></div>
+      <div class="benefit"><div class="glyph">P</div><h3>Secure booking process</h3><p>Your details are handled with care throughout checkout.</p></div>
+      <div class="benefit"><div class="glyph">U</div><h3>UK-focused experience</h3><p>Built around how UK travellers actually search for USA trips.</p></div>
+    </div>
+    <div style="margin-top:22px;">
+      <img src="https://picsum.photos/seed/experience/800/120" alt="Travel experience" loading="lazy" style="width:100%;height:110px;object-fit:cover;border-radius:16px;">
+    </div>
+    <p style="margin-top:22px;">Compare your choices and select a journey that fits your plans &mdash; <a href="https://shopnfly.co.uk/flight-to-usa" class="internal-link">USA flights from UK</a>, sorted by what matters to you.</p>
+  </div>
+</section>
+
+<!-- ===== PLANNING + IMAGE (1 image) ===== -->
+<section id="planning">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Before you fly</span>
+      <h2>USA Travel Planning Tips for UK Travellers</h2>
+      <p>Entry requirements can change, so always check the latest official government requirements before travelling.</p>
+    </div>
+    <ul class="checklist">
+      <li>Passport validity and travel documentation</li>
+      <li>Entry and travel authorisation requirements</li>
+      <li>Baggage allowances</li>
+      <li>Airport check-in and arrival time</li>
+      <li>Travel insurance</li>
+      <li>Connection times</li>
+      <li>Time-zone differences</li>
+      <li>Destination-specific requirements</li>
+    </ul>
+    <div style="margin-top:20px;">
+      <img src="https://picsum.photos/seed/prepare/800/120" alt="Travel preparation" loading="lazy" style="width:100%;height:110px;object-fit:cover;border-radius:16px;">
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="panel-bg" id="faq">
+  <div class="wrap" style="max-width:760px;">
+    <div class="section-head">
+      <span class="eyebrow">FAQs</span>
+      <h2>Frequently Asked Questions</h2>
+    </div>
+    <div id="faq-list">
+      <div class="faq-item"><div class="faq-q"><span>How can I find cheap flights to USA from the UK?</span><span class="plus">+</span></div><div class="faq-a"><p>Compare different travel dates, UK departure airports and USA destinations. Being flexible can give you more flight options to consider. <a href="https://shopnfly.co.uk/flight-to-usa" class="internal-link">Start your search for cheap USA flights</a>.</p></div></div>
+      <div class="faq-item"><div class="faq-q"><span>What UK airports can I use for flights to the USA?</span><span class="plus">+</span></div><div class="faq-a"><p>London, Manchester, Birmingham and Edinburgh are among the major UK departure points travellers can consider when <a href="https://shopnfly.co.uk/flight-to-usa" class="internal-link">searching for USA flights</a>.</p></div></div>
+      <div class="faq-item"><div class="faq-q"><span>What are the most popular USA destinations from the UK?</span><span class="plus">+</span></div><div class="faq-a"><p>Popular destinations include New York, Los Angeles, Miami, Orlando, Chicago, Las Vegas, San Francisco, Boston, Washington DC and Houston. <a href="https://shopnfly.co.uk/flight-to-usa" class="internal-link">Browse all USA destinations</a>.</p></div></div>
+      <div class="faq-item"><div class="faq-q"><span>Can I book one-way flights from the UK to the USA?</span><span class="plus">+</span></div><div class="faq-a"><p>Yes. One-way journeys can be suitable for travellers with flexible plans, longer stays or onward travel arrangements. <a href="https://shopnfly.co.uk/flight-to-usa" class="internal-link">Find one-way USA flights</a>.</p></div></div>
+      <div class="faq-item"><div class="faq-q"><span>Are return flights available from the UK to the USA?</span><span class="plus">+</span></div><div class="faq-a"><p>Return journeys are commonly used for holidays, business trips and family visits where travellers already know their intended return date. <a href="https://shopnfly.co.uk/flight-to-usa" class="internal-link">Book return flights to the USA</a>.</p></div></div>
+      <div class="faq-item"><div class="faq-q"><span>Can I search for flights from Manchester to the USA?</span><span class="plus">+</span></div><div class="faq-a"><p>Yes. Travellers based in northern England can <a href="https://shopnfly.co.uk/flight-to-usa" class="internal-link">compare available options departing from Manchester</a> according to their destination and travel dates.</p></div></div>
+      <div class="faq-item"><div class="faq-q"><span>How far in advance should I search for USA flights?</span><span class="plus">+</span></div><div class="faq-a"><p>There is no single booking period that works for every trip. Searching earlier can give you more choices, while flexible dates may also help when comparing options.</p></div></div>
+      <div class="faq-item"><div class="faq-q"><span>What should I check before booking a USA flight?</span><span class="plus">+</span></div><div class="faq-a"><p>Review your travel dates, departure and arrival airports, baggage conditions, journey details, passenger information and applicable travel requirements before <a href="https://shopnfly.co.uk/flight-to-usa" class="internal-link">confirming your USA flight booking</a>.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FINAL CTA ===== -->
+<section>
+  <div class="wrap">
+    <div class="final-cta">
+      <h2>Start Searching for Your USA Trip</h2>
+      <p><a href="https://shopnfly.co.uk/flight-to-usa" class="internal-link" style="color:#FBE3E0;text-decoration-color:rgba(251,227,224,0.4);">Search cheap flights to USA from UK</a> with Shopnfly and compare available options based on your preferred destination, departure airport and travel dates.</p>
+      <a href="https://shopnfly.co.uk/flight-to-usa" class="search-btn" style="text-decoration:none;display:inline-flex;">Search USA Flights</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">&copy; Shopnfly. Flight options shown are for illustration &mdash; always review fares, fare conditions and entry requirements before booking. <a href="https://shopnfly.co.uk/flight-to-usa" class="internal-link">Find your cheap flight to USA</a>.</div>
+</footer>
+
+<script>
+  document.querySelectorAll('.board-row').forEach(row=>{
+    row.addEventListener('click',()=>row.classList.toggle('open'));
+  });
+  document.querySelectorAll('.faq-item').forEach(item=>{
+    item.querySelector('.faq-q').addEventListener('click',()=>item.classList.toggle('open'));
+  });
+</script>
+
+</body>
+</html>
